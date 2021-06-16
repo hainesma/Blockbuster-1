@@ -18,30 +18,26 @@ namespace Blockbuster
         {
             //Think of this constructor as stocking our shelves in block buster with Movies
             List<string> shrekScenes = new List<string>() { "What are you doing in my swamp", "Shrek meets Donkey", "Castle scene", "Dragon fight scene" };
-            DVD d = new DVD("Shrek", Genre.Drama, 120, shrekScenes);
+            DVD d1 = new DVD();
+            Movie m1 = new Movie("Shrek", Genre.Comedy, 100, shrekScenes, d1);
 
-
-            List<string> meanGirls = new List<string>() { "First day at school", "You must wear pink on Wednesdays", "Riot scene", "Who's afraid of Regina?" };
-            DVD d2 = new DVD("Mean Girls", Genre.Comedy, 133, meanGirls);
-            //You cant call the constructor on abstract classes
-            //In abstract classes constructors exist for the children 
-            //Think of the children!
-            //Movie m = new Movie("Shrek", Genre.Comedy, 95, shrekScenes);
-
+            List<string> meanGirlsScenes = new List<string>() { "First day at school", "You must wear pink on Wednesdays", "Riot scene", "Who's afraid of Regina?" };
+            DVD d2 = new DVD();
+            Movie m2 = new Movie("Mean Girls", Genre.Comedy, 100, meanGirlsScenes, d2);
 
             List<string> dieHardScenes = new List<string>() { "Plane scene", "Snape takes over the building", "John McLane sneaks around", "Shoot out by the vault" };
-            VHS v = new VHS("Die Hard", Genre.Action, 120, dieHardScenes);
+            VHS v1 = new VHS();
+            Movie m3 = new Movie("Die Hard", Genre.Action, 100, dieHardScenes, v1);
 
             List<string> lordOfTheRingsScenes = new List<string>() { "Hobbiton", "Fireworks", "Mines of Moria", "Orcs attack" };
-            VHS v2 = new VHS("Fellowship of the Ring", Genre.Drama, 225, lordOfTheRingsScenes);
+            VHS v2 = new VHS();
+            Movie m4 = new Movie("Lord of the Rings", Genre.Drama, 100, lordOfTheRingsScenes, v2);
 
 
-
-            Movies.Add(v);
-           // Movies.Add(m);
-            Movies.Add(v2);
-            Movies.Add(d);
-            Movies.Add(d2);
+            Movies.Add(m1);
+            Movies.Add(m2);
+            Movies.Add(m3);
+            Movies.Add(m4);
         }
 
         //2 Reasons why we can use the movie class
@@ -72,7 +68,7 @@ namespace Blockbuster
 
             Movie m = GetMovie(index);
 
-            m.PlayWholeMovie();
+            m.Play();
         }
     }
 }
